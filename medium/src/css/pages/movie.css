@@ -1,0 +1,21 @@
+.movie__container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  & section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 500px;
+
+    & img {
+      width: 100%;
+      height: 600px;
+      border-radius: 20px;
+    }
+  }
+}
