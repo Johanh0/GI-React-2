@@ -1,0 +1,15 @@
+.main__container--detail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  & h1 {
+    font-size: 5rem;
+    color: var(--primary-color);
+  }
+
+  & p {
+    font-size: 2rem;
+  }
+}
