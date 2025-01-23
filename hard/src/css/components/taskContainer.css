@@ -1,0 +1,46 @@
+.task__container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 20px 0;
+
+  & .task__container--title {
+    font-size: 3rem;
+  }
+
+  & .task__container--tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  & .task__container--tasks .task {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    background-color: #15101c;
+    color: var(--primary-color);
+    border-radius: 8px;
+
+    & .task__title {
+      flex: 1;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    & .task__btns {
+      display: flex;
+      gap: 10px;
+
+      & img {
+        cursor: pointer;
+        opacity: 0.3;
+      }
+
+      & img:hover {
+        opacity: 10;
+      }
+    }
+  }
+}
