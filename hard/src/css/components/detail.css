@@ -12,4 +12,14 @@
   & p {
     font-size: 2rem;
   }
+
+  & img {
+    width: 40px;
+    opacity: 0.3;
+    cursor: pointer;
+  }
+
+  & img:hover {
+    opacity: 10;
+  }
 }
