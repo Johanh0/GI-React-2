@@ -44,7 +44,16 @@ const Home = () => {
     const allState = [...state];
     const updateState = allState.filter((duty) => duty !== allState[index]);
 
-    updatingLocalStorage("todo", updateState);
+    switch (state) {
+      case todo:
+        updatingLocalStorage("todo", updateState);
+
+        break;
+      case check:
+        updatingLocalStorage("check", updateState);
+      default:
+        break;
+    }
 
     setState(updateState);
   };
@@ -58,7 +67,24 @@ const Home = () => {
 
     allCheck.push(newCheck);
     setCheck(allCheck);
-    updatingLocalStorage("checked", allCheck);
+    updatingLocalStorage("check", allCheck);
+  };
+
+  const handleEdit = (e, index) => {
+    console.log(e.target.textContent);
+
+    const todoUpdated = [...todo].map((duty) => {
+      if (duty.id === [...todo][index].id) {
+        duty.title = e.target.textContent;
+      }
+
+      return duty;
+    });
+
+    setTimeout(() => {
+      updatingLocalStorage("todo", todoUpdated);
+      setTodo(todoUpdated);
+    }, 7000);
   };
 
   return (
@@ -81,8 +107,11 @@ const Home = () => {
                 task={duty.title}
                 isDeleted={true}
                 isCheck={true}
+                isEdit={true}
                 onCheck={() => handleCheck(index)}
                 onDelete={() => handleDelete(todo, setTodo, index)}
+                onEdit={(e) => handleEdit(e, index)}
+                editable={true}
               />
             ))}
           </TaskContainer>
